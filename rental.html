@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Bike | BikeRent</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-bicycle"></i>
+                <h1>BikeRent</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rental.html" class="active">Rent a Bike</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="rental-container">
+        <div class="container">
+            <h2>Rent a Bike</h2>
+            
+            <div class="rental-process">
+                <div class="step active" id="step1">
+                    <h3>1. Select Your Bike</h3>
+                    <div class="available-bikes" id="availableBikes">
+                        <!-- Bikes will be loaded from JavaScript -->
+                    </div>
+                    <button class="btn next-btn" onclick="nextStep(1)">Next</button>
+                </div>
+
+                <div class="step" id="step2">
+                    <h3>2. Enter Rental Details</h3>
+                    <form id="rentalForm">
+                        <div class="form-group">
+                            <label for="customerName">Your Name:</label>
+                            <input type="text" id="customerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rentalHours">Rental Hours:</label>
+                            <input type="number" id="rentalHours" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Estimated Cost:</label>
+                            <div class="cost-display" id="estimatedCost">$0</div>
+                        </div>
+                    </form>
+                    <div class="button-group">
+                        <button class="btn back-btn" onclick="prevStep(2)">Back</button>
+                        <button class="btn" onclick="calculateRent()">Calculate</button>
+                        <button class="btn confirm-btn" onclick="confirmRental()">Confirm Rental</button>
+                    </div>
+                </div>
+
+                <div class="step" id="step3">
+                    <h3>3. Rental Confirmation</h3>
+                    <div class="confirmation-card" id="confirmationCard">
+                        <!-- Confirmation details will be filled by JavaScript -->
+                    </div>
+                    <button class="btn" onclick="window.location.href='index.html'">Return to Home</button>
+                </div>
+            </div>
+
+            <div class="rental-history">
+                <h3>Recent Rentals</h3>
+                <div class="history-list" id="rentalHistory">
+                    <!-- Rental history will be loaded from JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BikeRent</h3>
+                    <p>Your trusted partner for bike rentals since 2023</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rental.html">Rent a Bike</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Dhalavaipuram,Rajapalayam</p>
+                    <p><i class="fas fa-phone"></i>+91 9080147814</p>
+                    <p><i class="fas fa-envelope"></i>ganeshayyar016@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 BikeRent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
